@@ -35,12 +35,3 @@ if st.button("Send") and new_message.strip():
         "timestamp": datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     })
     st.experimental_rerun()
-
-# Add a requirements.txt file
-with open("requirements.txt", "w") as f:
-    f.write("streamlit\n")
-
-# Add a runtime.txt file
-with open("runtime.txt", "w") as f:
-    f.write("python-3.10\n")
-
