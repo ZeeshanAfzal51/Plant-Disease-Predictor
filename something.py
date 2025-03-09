@@ -24,6 +24,7 @@ for msg in st.session_state["messages"]:
 # Toggle deciphering
 if st.button("Toggle Decipher Text"):
     st.session_state["show_decrypted"] = not st.session_state["show_decrypted"]
+    st.experimental_rerun()
 
 # Input field
 new_message = st.text_input("Type your message...")
@@ -34,3 +35,12 @@ if st.button("Send") and new_message.strip():
         "timestamp": datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     })
     st.experimental_rerun()
+
+# Add a requirements.txt file
+with open("requirements.txt", "w") as f:
+    f.write("streamlit\n")
+
+# Add a runtime.txt file
+with open("runtime.txt", "w") as f:
+    f.write("python-3.10\n")
+
